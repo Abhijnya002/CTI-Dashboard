@@ -1,8 +1,8 @@
-# 🛡️ Cyber Threat Intelligence (CTI) Dashboard
+# 🛡Cyber Threat Intelligence (CTI) Dashboard
 
 A visually engaging and interactive web dashboard for analyzing threat indicators from the **AlienVault OTX (Open Threat Exchange)** API. Built using **React**, **Vite**, **Recharts**, and **react-datepicker**, this application helps you monitor, visualize, and filter real-time threat intelligence data.
 
-![CTI Dashboard Screenshot](./assets/dashboard-screenshot.png) <!-- You can update this with your actual image path -->
+
 
 ---
 
@@ -31,7 +31,7 @@ A visually engaging and interactive web dashboard for analyzing threat indicator
 
 ## 🌐 Demo
 
-> [https://cti-dashboard.vercel.app](https://cti-dashboard.vercel.app) (replace this with your Vercel link)
+> [https://abhijnya002.github.io/CTI-Dashboard/] 
 
 ---
 
@@ -78,26 +78,31 @@ Deploy the contents of the `dist` folder to your preferred static hosting (like 
 ```
 CTI-Dashboard/
 │
-├── public/                 # Static assets
+├── public/                      # Static assets (favicon, etc.)
 ├── src/
-│   ├── components/
-│   ├── styles/
+│   ├── Components/              # React components
+│   │   ├── CTIdashboard.jsx     # Main dashboard component
+│   │   └── Header.jsx           # Header with dark mode toggle
+│   ├── styles/                  # Custom CSS styles
 │   │   ├── main.css
 │   │   └── tables.css
-│   └── CTIdashboard.jsx    # Main dashboard logic
-├── .env                    # API key (excluded from repo)
+│   ├── App.jsx                  # App wrapper
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx                 # React entry point
+│
+├── .env                         # Environment variables (not committed)
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
 ├── vite.config.js
-└── README.md
+└── eslint.config.js
 ```
 
----
 
-## 📄 License
-
-MIT © 2025 [Abhijnya K G](https://github.com/Abhijnya002)
 
 ---
 
-## 📬 Contact
-
-For feedback or questions, reach out on [GitHub](https://github.com/Abhijnya002) or email.
+Autor: Abhijnya K.G
