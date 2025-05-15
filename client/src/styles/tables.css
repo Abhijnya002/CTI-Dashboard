@@ -1,0 +1,134 @@
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  
+  body.dark .table-wrapper {
+    background-color: rgba(24, 28, 34, 0.95);
+  }
+  
+  .threat-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    font-family: var(--font-primary);
+  }
+  
+  .threat-table thead {
+    background: linear-gradient(to right, var(--accent), var(--accent-light));
+    color: white;
+    position: sticky;
+    top: 0;
+  }
+  
+  .threat-table th,
+  .threat-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-light);
+    text-align: left;
+  }
+  
+  body.dark .threat-table th,
+  body.dark .threat-table td {
+    border-color: var(--border-dark);
+  }
+  
+  .threat-table th {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    font-family: var(--font-heading);
+  }
+  
+  .threat-table tr.even-row {
+    background-color: rgba(241, 245, 249, 0.3);
+  }
+  
+  body.dark .threat-table tr.even-row {
+    background-color: rgba(30, 41, 59, 0.5);
+  }
+  
+  .type-cell {
+    font-family: var(--font-secondary);
+    color: var(--accent);
+    font-weight: 500;
+  }
+  
+  .value-cell {
+    font-family: var(--font-secondary);
+    font-size: 0.85rem;
+  }
+  
+  .description-cell {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .date-cell {
+    white-space: nowrap;
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+  
+  .load-more-button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    color: var(--accent);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-heading);
+  }
+  
+  body.dark .load-more-button {
+    border-color: var(--border-dark);
+  }
+  
+  .load-more-button:hover {
+    background-color: rgba(79, 70, 229, 0.1);
+  }
+  
+  /* Tooltip styles */
+  .recharts-tooltip-wrapper {
+    background-color: var(--card-bg-light) !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  }
+  
+  body.dark .recharts-tooltip-wrapper {
+    background-color: var(--card-bg-dark) !important;
+    border-color: var(--border-dark) !important;
+  }
+  
+  .recharts-tooltip-label {
+    color: var(--accent) !important;
+    font-weight: 500 !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .recharts-tooltip-item {
+    color: var(--text-light) !important;
+  }
+  
+  body.dark .recharts-tooltip-item {
+    color: var(--text-dark) !important;
+  }
+
+  .no-border {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  

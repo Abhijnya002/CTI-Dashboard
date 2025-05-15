@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: white;
+}
+
+.container {
+  padding: 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.dropdown {
+  margin-bottom: 1rem;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px;
+  background: #2d2a4a;
+  border: 1px solid #444;
+}

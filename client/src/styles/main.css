@@ -1,0 +1,620 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+  --bg-light: #f8fafc;
+  --bg-dark: #0f172a;
+  --text-light: #1e293b;
+  --text-dark: #f1f5f9;
+  --accent: #0d9488; /* Teal */
+  --accent-light: #14b8a6;
+  --warning: #f59e0b; /* Amber */
+  --danger: #f43f5e; /* Rose */
+  --success: #10b981; /* Emerald */
+  --secondary: #6366f1; /* Indigo */
+  --tertiary: #8b5cf6; /* Violet */
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #1e293b;
+  --border-light: #e2e8f0;
+  --border-dark: #334155;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--card-bg-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+body.dark .dashboard-header {
+  background-color: var(--card-bg-dark);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.header-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--accent);
+}
+
+.header-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0.25rem 0 0;
+}
+
+.theme-toggle {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-primary);
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-light);
+}
+
+/* Controls */
+.controls-container {
+  margin-bottom: 2rem;
+  background-color: rgba(13, 148, 136, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+body.dark .controls-container {
+  background-color: rgba(13, 148, 136, 0.1);
+}
+
+.filter-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-item {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-select,  .filter-datepicker {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-family: var(--font-primary);
+  background-color: var(--card-bg-light);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.filter-datepicker {
+  height: 44px;
+  
+}
+
+body.dark .filter-select,
+/* body.dark .filter-input, */
+body.dark .filter-datepicker {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-dark);
+  color: var(--text-dark);
+}
+
+
+
+
+.export-button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 44px;
+  white-space: nowrap;
+}
+
+.export-button:hover {
+  background-color: var(--accent-light);
+}
+
+/* Card Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background-color: var(--card-bg-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+body.dark .card {
+  background-color: var(--card-bg-dark);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 1.5rem;
+}
+
+/* Chart Container */
+.chart-container {
+  display: flex;
+  gap: 1.5rem;
+  height: 300px;
+  background-color: rgba(13, 148, 136, 0.03);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+body.dark .chart-container {
+  background-color: rgba(13, 148, 136, 0.1);
+}
+
+.summary-table-container {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+  background-color: var(--card-bg-light);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+body.dark .summary-table-wrapper {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-dark);
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.summary-table th, 
+.summary-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+body.dark .summary-table th,
+body.dark .summary-table td {
+  border-color: var(--border-dark);
+}
+
+.summary-table th {
+  font-weight: 600;
+  background-color: rgba(13, 148, 136, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+body.dark .summary-table th {
+  background-color: rgba(13, 148, 136, 0.2);
+}
+
+.color-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.active-row {
+  background-color: rgba(13, 148, 136, 0.1) !important;
+}
+
+body.dark .active-row {
+  background-color: rgba(13, 148, 136, 0.2) !important;
+}
+
+/* Pulses Visualization */
+.pulses-container {
+  margin-top: 1rem;
+}
+
+.pulses-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.pulse-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pulse-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: var(--border-light);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+body.dark .pulse-bar-container {
+  background-color: var(--border-dark);
+}
+
+.pulse-bar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.pulse-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.pulse-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+.pulse-count {
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Table Card */
+.table-card {
+  margin-top: 1.5rem;
+  background-color: var(--card-bg-light);
+}
+
+body.dark .table-card {
+  background-color: var(--card-bg-dark);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table-info {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.table-container {
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background-color: var(--card-bg-light);
+  border: 1px solid var(--border-light);
+}
+
+body.dark .table-container {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-dark);
+}
+
+.threat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.threat-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(to right, var(--accent), var(--accent-light));
+  color: white;
+}
+
+.threat-table th,
+.threat-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+body.dark .threat-table th,
+body.dark .threat-table td {
+  border-color: var(--border-dark);
+}
+
+.threat-table th {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-family: var(--font-heading);
+}
+
+.threat-table tr.even-row {
+  background-color: rgba(241, 245, 249, 0.3);
+}
+
+body.dark .threat-table tr.even-row {
+  background-color: rgba(30, 41, 59, 0.5);
+}
+
+.type-cell {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.value-cell {
+  font-size: 0.85rem;
+}
+
+.description-cell {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.date-cell {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.load-more-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-heading);
+}
+
+body.dark .load-more-button {
+  border-color: var(--border-dark);
+}
+
+.load-more-button:hover {
+  background-color: rgba(13, 148, 136, 0.1);
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(13, 148, 136, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+.loading-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Chart Tooltips */
+.recharts-tooltip-wrapper {
+  background-color: var(--card-bg-light) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+body.dark .recharts-tooltip-wrapper {
+  background-color: var(--card-bg-dark) !important;
+  border-color: var(--border-dark) !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--accent) !important;
+  font-weight: 500 !important;
+  margin-bottom: 4px !important;
+}
+
+.recharts-tooltip-item {
+  color: var(--text-light) !important;
+}
+
+body.dark .recharts-tooltip-item {
+  color: var(--text-dark) !important;
+}
+
+.recharts-legend-item-text {
+  font-size: 0.8rem !important;
+  color: var(--text-light) !important;
+}
+
+body.dark .recharts-legend-item-text {
+  color: var(--text-dark) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chart-container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .filter-group {
+    flex-direction: column;
+  }
+  
+  .filter-item {
+    width: 100%;
+  }
+  
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Add these updates to your existing main.css */
+
+.summary-table-container {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 300px; /* Fixed height for scrolling */
+}
+
+.summary-table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+  background-color: var(--card-bg-light);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.summary-table th {
+  position: sticky;
+  top: 0;
+  background-color: var(--card-bg-light);
+  z-index: 2;
+}
+
+body.dark .summary-table th {
+  background-color: var(--card-bg-dark);
+}
+
+/* Remove duplicate header styles if any */
+.dashboard-header {
+  /* Ensure this only appears once */
+}
+.no-border {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.summary-table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden; /* Removes horizontal scrollbar */
+  padding: 0.5rem;
+  background-color: var(--card-bg-light);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  max-width: 100%; /* Ensure it fits container */
+}
+
+.summary-table {
+  width: 100%; /* Ensure table takes available space only */
+  table-layout: fixed; /* Prevents overflow by distributing columns */
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  word-wrap: break-word; /* Ensure content wraps within cells */
+}
+
+.summary-table td, .summary-table th {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
