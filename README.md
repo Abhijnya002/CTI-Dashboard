@@ -34,7 +34,20 @@ A visually engaging and interactive web dashboard for analyzing threat indicator
 > https://abhijnya002.github.io/CTI-Dashboard/
 
 ---
+## 📡 Data Sources & APIs
 
+This dashboard retrieves real-time threat intelligence data from the following public API:
+
+### 🌐 [AlienVault OTX (Open Threat Exchange) API](https://otx.alienvault.com/)
+
+- **Endpoint Used**: `/api/v1/pulses/subscribed`
+- **Purpose**: Fetches subscribed threat intelligence pulses, including indicator types, values, and metadata.
+- **Authentication**: Requires an API key passed via the `X-OTX-API-KEY` HTTP header.
+- **Format**: JSON response containing a list of `pulses`, each with nested `indicators`.
+
+> To use this API, sign up for a free account at [AlienVault OTX](https://otx.alienvault.com/) and generate an API key under your profile.
+
+---
 ## 🔐 Environment Setup
 
 To run this project locally, set up your `.env` file:
