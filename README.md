@@ -1,4 +1,4 @@
-# 🛡Cyber Threat Intelligence (CTI) Dashboard
+# Cyber Threat Intelligence (CTI) Dashboard
 
 A visually engaging and interactive web dashboard for analyzing threat indicators from the **AlienVault OTX (Open Threat Exchange)** API. Built using **React**, **Vite**, **Recharts**, and **react-datepicker**, this application helps you monitor, visualize, and filter real-time threat intelligence data.
 
