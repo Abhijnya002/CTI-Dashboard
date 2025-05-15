@@ -31,7 +31,7 @@ A visually engaging and interactive web dashboard for analyzing threat indicator
 
 ## 🌐 Demo
 
-> [https://abhijnya002.github.io/CTI-Dashboard/] 
+> https://abhijnya002.github.io/CTI-Dashboard/
 
 ---
 
@@ -105,4 +105,4 @@ CTI-Dashboard/
 
 ---
 
-Autor: Abhijnya K.G
+Autor: Abhijnya Konanduru Gurumurthy
